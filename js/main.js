@@ -18,8 +18,9 @@ var bgPic = new Image();
 var ane;
 //定义食物对象
 var fruit;
-//定义大鱼对象
+//定义大鱼小鱼对象
 var mom;
+var baby;
 //定义鼠标的坐标
 var mx;
 var my;
@@ -60,6 +61,9 @@ function init(){
 	mom = new momObj();
 	mom.init();
 
+	baby = new babyObj();
+	baby.init();
+
 	mx = canWidth*0.5;
 	my = canHeight*0.5;
 }
@@ -84,6 +88,8 @@ function gameloop(){
 	mom.draw();
 
 	momFruitCollision();
+
+	baby.draw();
 }
 
 function onMouseMove(e){

@@ -34,8 +34,9 @@ momObj.prototype.draw = function(){
 	ctx1.translate(this.x,this.y);
 	ctx1.rotate(this.angle);
 	//设置相对位置，使大鱼的眼睛、身体和尾巴始终保持在恰当的相对位置
-	ctx1.drawImage(this.bigEye,-this.bigEye.width*0.5,-this.bigEye.height*0.5);
-	ctx1.drawImage(this.bigBody,-this.bigBody.width*0.5,-this.bigBody.height*0.5);
 	ctx1.drawImage(this.bigTail,-this.bigTail.width*0.5+30,-this.bigTail.height*0.5);
+	ctx1.drawImage(this.bigBody,-this.bigBody.width*0.5,-this.bigBody.height*0.5);
+	ctx1.drawImage(this.bigEye,-this.bigEye.width*0.5,-this.bigEye.height*0.5);
+
 	ctx1.restore();
 };
