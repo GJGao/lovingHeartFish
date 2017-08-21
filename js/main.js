@@ -14,9 +14,10 @@ var canHeight;
 
 //定义背景图片
 var bgPic = new Image();
-//定义海葵
+//定义海葵对象
 var ane;
-
+//定义食物对象
+var fruit;
 
 
 //当文档加载完后才运行游戏
@@ -44,6 +45,9 @@ function init(){
 
 	ane = new aneObj();
 	ane.init();
+
+	fruit = new fruitObj();
+	fruit.init();
 }
 
 //游戏循环，让画面动起来
@@ -57,4 +61,5 @@ function gameloop(){
 
 	drawBackground();
 	ane.draw();
+	fruit.draw();
 }
