@@ -20,6 +20,9 @@ var ane;
 var fruit;
 //定义大鱼对象
 var mom;
+//定义鼠标的坐标
+var mx;
+var my;
 
 
 //当文档加载完后才运行游戏
@@ -40,6 +43,9 @@ function init(){
 	can2 = document.getElementById("canvas2");//用于绘制背景、海棠、食物
 	ctx2 = can2.getContext('2d');
 
+	//添加鼠标监听事件
+	can1.addEventListener('mousemove',onMouseMove,false);
+
 	bgPic.src = "src/background.jpg";//图片加载
 
 	canWidth = can1.width;
@@ -53,6 +59,9 @@ function init(){
 
 	mom = new momObj();
 	mom.init();
+
+	mx = canWidth*0.5;
+	my = canHeight*0.5;
 }
 
 //游戏循环，让画面动起来
@@ -71,4 +80,12 @@ function gameloop(){
 
 	ctx1.clearRect(0,0,canWidth,canHeight);
 	mom.draw();
+}
+
+function onMouseMove(e){
+	if(e.offSetX || e.layerX){
+		mx = e.offSetX == undefined ? e.layerX : e.offSetX;
+		my = e.offSetY == undefined ? e.layerY : e.offSetY;
+		//console.log(mx);//获取鼠标坐标
+	}
 }
