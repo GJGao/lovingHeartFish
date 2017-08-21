@@ -18,6 +18,8 @@ var bgPic = new Image();
 var ane;
 //定义食物对象
 var fruit;
+//定义大鱼对象
+var mom;
 
 
 //当文档加载完后才运行游戏
@@ -48,6 +50,9 @@ function init(){
 
 	fruit = new fruitObj();
 	fruit.init();
+
+	mom = new momObj();
+	mom.init();
 }
 
 //游戏循环，让画面动起来
@@ -63,4 +68,7 @@ function gameloop(){
 	ane.draw();
 	fruitMonitor();
 	fruit.draw();
+
+	ctx1.clearRect(0,0,canWidth,canHeight);
+	mom.draw();
 }
