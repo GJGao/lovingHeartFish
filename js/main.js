@@ -71,6 +71,8 @@ function gameloop(){
 	var now = Date.now();//获取当前时间
 	deltaTime = now - lastTime;//当前时间与上次时间的时间差
 	lastTime = now;
+
+	if(deltaTime>40) deltaTime = 40;//防止果实过大（果实的大小跟deltaTime的值成正比
 	//console.log(deltaTime) //从这里可以查看deltaTime是一个变化的值
 
 	drawBackground();
