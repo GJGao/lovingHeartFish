@@ -21,6 +21,7 @@ function momFruitCollision(){
 				if(fruit.fruitType[i] == "blue"){
 					data.double = 2;
 				}
+				wave.born(fruit.x[i],fruit.y[i]);
 			}
 		}
 	}

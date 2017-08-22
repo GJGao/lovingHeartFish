@@ -40,6 +40,9 @@ var momBodyBlue = [];
 
 var data;
 
+//白色圈
+var wave;
+
 //当文档加载完后才运行游戏
 document.body.onload = newgame;
 
@@ -118,6 +121,9 @@ function init(){
 
 	ctx1.font = "30px Verdana"//分值的字体
 	ctx1.textAlign = "center";
+
+	wave = new waveObj();
+	wave.init();
 }
 
 //游戏循环，让画面动起来
@@ -144,6 +150,7 @@ function gameloop(){
 	momBabyCollision();
 
 	data.draw();
+	wave.draw();
 }
 
 function onMouseMove(e){
