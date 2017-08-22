@@ -42,6 +42,8 @@ var data;
 
 //白色圈
 var wave;
+//橙色圈
+var halo;
 
 //当文档加载完后才运行游戏
 document.body.onload = newgame;
@@ -124,6 +126,9 @@ function init(){
 
 	wave = new waveObj();
 	wave.init();
+
+	halo = new haloObj();
+	halo.init();
 }
 
 //游戏循环，让画面动起来
@@ -151,6 +156,7 @@ function gameloop(){
 
 	data.draw();
 	wave.draw();
+	halo.draw();
 }
 
 function onMouseMove(e){

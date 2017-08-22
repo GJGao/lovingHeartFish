@@ -41,6 +41,8 @@ function momBabyCollision(){
 			mom.momBodyCount = 0;
 			//分数更新
 			data.addScore();
+			//绘制圆圈
+			halo.born(baby.x,baby.y);
 		}
 	}
 
