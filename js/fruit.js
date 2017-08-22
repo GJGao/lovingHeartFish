@@ -53,8 +53,8 @@ fruitObj.prototype.draw = function(){
 //检测当前果实的数量
 fruitObj.prototype.born = function(i){
 	var aneID = Math.floor(Math.random()*ane.num);
-	this.x[i] = ane.x[aneID];
-	this.y[i] = canHeight - ane.len[aneID];
+	this.x[i] = ane.headx[aneID];
+	this.y[i] = ane.heady[aneID];
 	this.alive[i] = true;
 	var ran = Math.random();
 	if(ran < 0.3){
