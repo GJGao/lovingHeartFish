@@ -115,6 +115,9 @@ function init(){
 		momBodyOrange[i].src = "src/bigSwim" + i +".png";
 		momBodyBlue[i].src = "src/bigSwimBlue" + i +".png";
 	}
+
+	ctx1.font = "30px Verdana"//分值的字体
+	ctx1.textAlign = "center";
 }
 
 //游戏循环，让画面动起来

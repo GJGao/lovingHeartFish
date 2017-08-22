@@ -32,8 +32,8 @@ function momBabyCollision(){
 			if(l<900){
 				baby.babyBodyCount = 0;
 
-				//大鱼跟小鱼碰撞后，大鱼的数据重置
-				data.reset();
 				mom.momBodyCount = 0;
+				//分数更新
+				data.addScore();
 			}
 }
