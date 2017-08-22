@@ -3,7 +3,7 @@ var babyObj = function(){
 	this.y;
 	this.angle;
 	//this.babyEye = new Image();
-	this.babyBody = new Image();
+	//this.babyBody = new Image();
 	//this.babyTail = new Image();
 
 	//创建一个定时器，小鱼的尾巴图片帧循环播放
@@ -15,6 +15,8 @@ var babyObj = function(){
 	this.babyEyeCount = 0;
 	this.babyEyeTnterval = 1000;//定义时间间隔
 
+	this.babyBodyTimer = 0;
+	this.babyBodyCount = 0;
 };
 
 babyObj.prototype.init = function(){
@@ -22,7 +24,7 @@ babyObj.prototype.init = function(){
 	this.y = canHeight*0.5 +50;
 	this.angle = 0;
 	//this.babyEye.src = "src/babyEye0.png";
-	this.babyBody.src = "src/babyFade0.png";
+	//this.babyBody.src = "src/babyFade0.png";
 	//this.babyTail.src = "src/babyTail0.png";
 };
 
@@ -55,14 +57,27 @@ babyObj.prototype.draw = function(){
 		}else{
 			this.babyEyeTnterval = 100;//闭眼的时间，因为闭眼时间短暂，时间都差不多
 		}
+	}
 
+	//小鱼身体的计数
+	this.babyBodyTimer += deltaTime;
+	if(this.babyBodyTimer>400){
+		this.babyBodyCount = this.babyBodyCount +1;
+		this.babyBodyTimer = 0;
+		if(this.babyBodyCount>19){
+			this.babyBodyCount = 19;
+			//游戏结束
+
+		}
 	}
 
 	ctx1.save();
 	ctx1.translate(this.x,this.y);
 	ctx1.rotate(this.angle);
 	ctx1.drawImage(babyTail[this.babyTailCount],-babyTail[this.babyTailCount].width*0.5+23,-babyTail[this.babyTailCount].height*0.5);
-	ctx1.drawImage(this.babyBody,-this.babyBody.width*0.5,-this.babyBody.height*0.5);
+
+	var babyBodyCount = this.babyBodyCount;
+	ctx1.drawImage(babyBody[babyBodyCount],-babyBody[babyBodyCount].width*0.5,-babyBody[babyBodyCount].height*0.5);
 
 	var babyEyeCount = this.babyEyeCount;
 	ctx1.drawImage(babyEye[babyEyeCount],-babyEye[babyEyeCount].width*0.5,-babyEye[babyEyeCount].height*0.5);

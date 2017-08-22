@@ -29,6 +29,8 @@ var my;
 var babyTail = [];
 //定义小鱼的眼睛
 var babyEye = [];
+//定义小鱼的身体，放身体变化的图片地址
+var babyBody = [];
 
 
 //当文档加载完后才运行游戏
@@ -81,6 +83,11 @@ function init(){
 	for(var i=0;i<2;i++){
 		babyEye[i] = new Image();
 		babyEye[i].src = "src/babyEye" + i +".png";
+	}
+
+	for(var i=0;i<20;i++){
+		babyBody[i] = new Image();
+		babyBody[i].src = "src/babyFade" + i +".png";
 	}
 }
 
