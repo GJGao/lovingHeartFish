@@ -36,6 +36,8 @@ var babyBody = [];
 var momTail = [];
 var momEye = [];
 
+var data;
+
 //当文档加载完后才运行游戏
 document.body.onload = newgame;
 
@@ -102,6 +104,8 @@ function init(){
 		momEye[i] = new Image();
 		momEye[i].src = "src/bigEye" + i +".png";
 	}
+
+	data = new dataObj();
 }
 
 //游戏循环，让画面动起来
@@ -126,6 +130,8 @@ function gameloop(){
 
 	momFruitCollision();
 	momBabyCollision();
+
+	data.draw();
 }
 
 function onMouseMove(e){

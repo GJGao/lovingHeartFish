@@ -7,6 +7,13 @@ function momFruitCollision(){
 			//判断是否碰撞
 			if(l<900){
 				fruit.dead(i);
+
+				data.fruitNum++;
+
+				//判断是否吃掉蓝色果实
+				if(fruit.fruitType[i] == "blue"){
+					data.double = 2;
+				}
 			}
 		}
 	}
@@ -18,6 +25,9 @@ function momBabyCollision(){
 			var l = calLength2(mom.x,mom.y,baby.x,baby.y);
 			//判断是否碰撞
 			if(l<900){
-				return baby.babyBodyCount = 0;
+				baby.babyBodyCount = 0;
+
+				//大鱼跟小鱼碰撞后，大鱼的数据重置
+				data.reset();
 			}
 }
