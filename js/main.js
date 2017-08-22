@@ -35,6 +35,8 @@ var babyBody = [];
 //定义大鱼尾巴序列帧的数组
 var momTail = [];
 var momEye = [];
+var momBodyOrange = [];
+var momBodyBlue = [];
 
 var data;
 
@@ -106,6 +108,13 @@ function init(){
 	}
 
 	data = new dataObj();
+
+	for(var i=0;i<8;i++){
+		momBodyOrange[i] = new Image();
+		momBodyBlue[i] = new Image();
+		momBodyOrange[i].src = "src/bigSwim" + i +".png";
+		momBodyBlue[i].src = "src/bigSwimBlue" + i +".png";
+	}
 }
 
 //游戏循环，让画面动起来
