@@ -109,10 +109,10 @@ function gameloop(){
 
 	ctx1.clearRect(0,0,canWidth,canHeight);
 	mom.draw();
+	baby.draw();
 
 	momFruitCollision();
-
-	baby.draw();
+	momBabyCollision();
 }
 
 function onMouseMove(e){

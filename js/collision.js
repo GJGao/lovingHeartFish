@@ -1,4 +1,4 @@
-//判断大鱼和果实的距离
+//检测大鱼和小鱼的碰撞
 function momFruitCollision(){
 	for(var i=0;i<fruit.num;i++){
 		if(fruit.alive[i]){
@@ -10,4 +10,14 @@ function momFruitCollision(){
 			}
 		}
 	}
+}
+
+//检测大鱼和小鱼的碰撞
+function momBabyCollision(){
+
+			var l = calLength2(mom.x,mom.y,baby.x,baby.y);
+			//判断是否碰撞
+			if(l<900){
+				return baby.babyBodyCount = 0;
+			}
 }
