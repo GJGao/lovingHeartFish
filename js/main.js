@@ -147,9 +147,12 @@ function gameloop(){
 }
 
 function onMouseMove(e){
-	if(e.offSetX || e.layerX){
+	//当游戏结束，鼠标就不能控制大鱼
+	if(!data.gameOver){
+		if(e.offSetX || e.layerX){
 		mx = e.offSetX == undefined ? e.layerX : e.offSetX;
 		my = e.offSetY == undefined ? e.layerY : e.offSetY;
 		//console.log(mx);//获取鼠标坐标
+	}
 	}
 }

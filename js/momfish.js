@@ -56,6 +56,8 @@ momObj.prototype.draw = function(){
 		}
 	}
 
+
+
 	ctx1.save();
 	ctx1.translate(this.x,this.y);
 	ctx1.rotate(this.angle);
