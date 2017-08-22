@@ -34,6 +34,7 @@ var babyBody = [];
 
 //定义大鱼尾巴序列帧的数组
 var momTail = [];
+var momEye = [];
 
 //当文档加载完后才运行游戏
 document.body.onload = newgame;
@@ -95,6 +96,11 @@ function init(){
 	for(var i=0;i<8;i++){
 		momTail[i] = new Image();
 		momTail[i].src = "src/bigTail" + i +".png";
+	}
+
+	for(var i=0;i<2;i++){
+		momEye[i] = new Image();
+		momEye[i].src = "src/bigEye" + i +".png";
 	}
 }
 
