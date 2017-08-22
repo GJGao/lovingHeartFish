@@ -25,6 +25,9 @@ var baby;
 var mx;
 var my;
 
+//定义小鱼尾巴序列帧的数组
+var babyTail = [];
+
 
 //当文档加载完后才运行游戏
 document.body.onload = newgame;
@@ -66,6 +69,12 @@ function init(){
 
 	mx = canWidth*0.5;
 	my = canHeight*0.5;
+
+	//实例化小鱼的每个尾巴图片
+	for(var i=0;i<8;i++){
+		babyTail[i] = new Image();
+		babyTail[i].src = "src/babyTail" + i +".png";
+	}
 }
 
 //游戏循环，让画面动起来
