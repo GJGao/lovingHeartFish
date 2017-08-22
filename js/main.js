@@ -27,6 +27,8 @@ var my;
 
 //定义小鱼尾巴序列帧的数组
 var babyTail = [];
+//定义小鱼的眼睛
+var babyEye = [];
 
 
 //当文档加载完后才运行游戏
@@ -74,6 +76,11 @@ function init(){
 	for(var i=0;i<8;i++){
 		babyTail[i] = new Image();
 		babyTail[i].src = "src/babyTail" + i +".png";
+	}
+
+	for(var i=0;i<2;i++){
+		babyEye[i] = new Image();
+		babyEye[i].src = "src/babyEye" + i +".png";
 	}
 }
 
