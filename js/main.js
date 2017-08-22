@@ -32,6 +32,8 @@ var babyEye = [];
 //定义小鱼的身体，放身体变化的图片地址
 var babyBody = [];
 
+//定义大鱼尾巴序列帧的数组
+var momTail = [];
 
 //当文档加载完后才运行游戏
 document.body.onload = newgame;
@@ -88,6 +90,11 @@ function init(){
 	for(var i=0;i<20;i++){
 		babyBody[i] = new Image();
 		babyBody[i].src = "src/babyFade" + i +".png";
+	}
+
+	for(var i=0;i<8;i++){
+		momTail[i] = new Image();
+		momTail[i].src = "src/bigTail" + i +".png";
 	}
 }
 
