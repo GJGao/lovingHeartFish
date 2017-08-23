@@ -7,6 +7,7 @@ var fruitObj = function(){
 	this.fruitType = [];//区别果实类型
 	this.orange = new Image();
 	this.blue = new Image();
+	this.aneNumber = [];
 };
 
 fruitObj.prototype.num = 30;
@@ -15,7 +16,8 @@ fruitObj.prototype.init = function(){
 		this.alive[i] = false;
 		this.x[i] = 0;
 		this.y[i] = 0;
-		this.l[i] = 0;
+
+		//this.aneNumber = 0;
 		this.speed[i] = Math.random()*0.017+0.003;
 		this.fruitType[i] = "";
 		this.born(i);
@@ -27,6 +29,7 @@ fruitObj.prototype.init = function(){
 
 fruitObj.prototype.draw = function(){
 	for(var i=0;i<this.num;i++){
+		//判断是蓝色果实还是橙色果实
 		if(this.alive[i]){
 			if(this.fruitType[i] == "blue"){
 				var pic = this.blue;
@@ -34,13 +37,19 @@ fruitObj.prototype.draw = function(){
 				var pic = this.orange;
 			}
 
+			//找到坐标并且绘制出来
 			if(this.l[i] <= 14){
+				var num = this.aneNumber[i];
+
+				this.x[i] = ane.headx[num];
+				this.y[i] = ane.heady[num];
 				this.l[i] += this.speed[i]*deltaTime;
+				ctx2.drawImage(pic,this.x[i]-this.l[i]*0.5,this.y[i],this.l[i],this.l[i]);
+
 			}else{
 				this.y[i] -= this.speed[i]*7*deltaTime;
+				ctx2.drawImage(pic,this.x[i]-this.l[i]*0.5,this.y[i],this.l[i],this.l[i]);
 			}
-
-			ctx2.drawImage(pic,this.x[i] - this.l[i]*0.5,this.y[i]-this.l[i]*0.5,this.l[i],this.l[i]);
 
 			if(this.y[i] <0){
 				this.alive[i] = false;
@@ -52,9 +61,10 @@ fruitObj.prototype.draw = function(){
 
 //检测当前果实的数量
 fruitObj.prototype.born = function(i){
-	var aneID = Math.floor(Math.random()*ane.num);
-	this.x[i] = ane.headx[aneID];
-	this.y[i] = ane.heady[aneID];
+	console.log(this.aneNumber[i])
+	this.aneNumber[i] = Math.floor(Math.random()*ane.num);
+
+	this.l[i] = 0;
 	this.alive[i] = true;
 	var ran = Math.random();
 	if(ran < 0.3){
