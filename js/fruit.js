@@ -61,7 +61,6 @@ fruitObj.prototype.draw = function(){
 
 //检测当前果实的数量
 fruitObj.prototype.born = function(i){
-	console.log(this.aneNumber[i])
 	this.aneNumber[i] = Math.floor(Math.random()*ane.num);
 
 	this.l[i] = 0;

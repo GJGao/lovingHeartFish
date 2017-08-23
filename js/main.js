@@ -65,6 +65,12 @@ function init(){
 
 	//添加鼠标监听事件
 	can1.addEventListener('mousemove',onMouseMove,false);
+	//添加鼠标点击事件，game over后可点击重新开始游戏
+	can1.addEventListener('click',function(){
+		if(data.gameOver==true){
+			newgame();
+		}
+	});
 
 	bgPic.src = "src/background.jpg";//图片加载
 
